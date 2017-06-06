@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dominik Martinez{% endblock %}
+
+{% block head %}
+<script type="text/javascript" src="{% static 'js/typed.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="about">
+        <div>i like to </div>
+        <div id="thing-i-am"></div>
+    </div>
+
+    <div id="things-i-am">
+        <p><a href="/software">write code</a></p>
+        <p><a href="#">visualize data</a></p>
+        <p><a href="/creative">write music</a></p>
+    </div>
+
+    <script type="text/javascript">
+
+    $(function(){
+        $("#thing-i-am").typed({
+            stringsElement: $("#things-i-am"),
+            loop: true,
+            backDelay: 3000
+        })
+    })
+
+    </script>
+{% endblock %}

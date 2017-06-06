@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dominik Martinez{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <div class="posts">
+    <div class="page-title">
+        {{ page.title }}
+    </div>
+    <div class="page-description">
+        {{ page.description | safe }}
+    </div>
+    {% for post in posts %}
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-body">{{ post.body }}</div>
+    {% endfor %}
+    </div>
+{% endblock %}
