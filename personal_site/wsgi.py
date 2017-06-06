@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 WSGI config for personal_site project.
 
@@ -9,7 +11,10 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 
 import os
 import sys
-from .settings import BASE_DIR
+from .settings import BASE_DIR, ACTIVATE
+
+with open(ACTIVATE) as file_:
+    exec(file_.read(), dict(__file__=ACTIVATE))
 
 from django.core.wsgi import get_wsgi_application
 
